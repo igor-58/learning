@@ -1,0 +1,11 @@
+/*В базе есть таблица музыкальных треков и жанров. 
+Покажите жанры у которых средняя стоимость одного трека больше 1-го рубля*/
+
+SELECT g.Name,
+       AVG(UnitPrice) avg_price
+  FROM tracks t
+       JOIN
+       genres g ON t.GenreId = g.GenreId
+ GROUP BY g.Name
+ HAVING AVG(UnitPrice) > 1;
+

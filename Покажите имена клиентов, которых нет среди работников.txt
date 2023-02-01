@@ -1,0 +1,23 @@
+--Покажите имена клиентов, которых нет среди работников.
+
+SELECT DISTINCT firstname
+  FROM customers
+ WHERE firstname NOT IN (
+           SELECT DISTINCT c.firstname
+             FROM employees e
+                  JOIN
+                  customers c ON e.firstname = c.firstname
+       )
+ ORDER BY 1;
+
+SELECT DISTINCT c.firstname
+  FROM customers c
+       LEFT JOIN
+       employees e ON c.firstname = e.firstname
+ WHERE c.firstname NOT IN (
+           SELECT c.firstname
+             FROM employees e
+                  JOIN
+                  customers c ON c.firstname = e.firstname
+       )
+ ORDER BY 1;

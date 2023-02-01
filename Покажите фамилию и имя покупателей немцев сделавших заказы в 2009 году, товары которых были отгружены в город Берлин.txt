@@ -1,0 +1,10 @@
+-- Покажите фамилию и имя покупателей немцев сделавших заказы в 2009 году, товары которых были отгружены в город Берлин?
+
+SELECT DISTINCT LastName,
+                FirstName
+  FROM customers c
+       JOIN
+       sales s ON c.CustomerId = s.CustomerId
+ WHERE strftime('%Y', SalesDate) = '2009' AND 
+       ShipCity = 'Berlin' AND 
+       Country = 'Germany';

@@ -1,0 +1,28 @@
+-- Посчитайте общую сумму продаж в США в 1 квартале 2012 года?
+
+-- I способ
+
+SELECT ShipCountry,
+       SUM(UnitPrice * Quantity) sum_sale
+  FROM sales s
+       INNER JOIN
+       sales_items si ON s.salesid = si.salesid
+ WHERE ShipCountry = 'USA' AND 
+       (strftime('%m', SalesDate) IN ('01', '02', '03') AND 
+        strftime('%Y', SalesDate) = '2012') 
+ GROUP BY ShipCountry;
+ 
+-- II способ
+
+SELECT ShipCountry,
+       SUM( (
+                SELECT SUM(UnitPrice * Quantity) 
+                  FROM sales_items si
+                 WHERE si.salesid = s.salesid
+            )
+       ) sum_sale
+  FROM sales s
+ WHERE ShipCountry = 'USA' AND 
+       (strftime('%m', SalesDate) IN ('01', '02', '03') AND 
+        strftime('%Y', SalesDate) = '2012') 
+ GROUP BY ShipCountry;

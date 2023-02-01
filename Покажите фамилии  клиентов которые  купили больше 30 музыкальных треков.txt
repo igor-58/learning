@@ -1,0 +1,10 @@
+---- Покажите фамилии  клиентов которые  купили больше 30 музыкальных треков
+SELECT LastName,
+       sum(Quantity) 
+  FROM customers c
+       JOIN
+       sales s ON c.CustomerId = s.CustomerId
+       JOIN
+       sales_items si ON s.salesid = si.salesid
+ GROUP BY LastName
+HAVING sum(Quantity) > 30;
