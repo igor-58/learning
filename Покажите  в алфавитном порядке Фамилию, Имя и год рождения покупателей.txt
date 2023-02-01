@@ -1,0 +1,9 @@
+--Покажите  в алфавитном порядке Фамилию, Имя и год рождения покупателей  ?
+
+SELECT LastName,
+       FirstName,
+       BirthDate
+  FROM employees
+ ORDER BY 1,
+          2,
+          3;

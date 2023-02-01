@@ -1,0 +1,7 @@
+--Покажите средний возраст клиента для каждой страны ?
+
+SELECT Country,
+       FLOOR(AVG(age) ) AS avg_age
+  FROM customers
+ GROUP BY Country
+ ORDER BY 2 DESC;

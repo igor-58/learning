@@ -1,0 +1,5 @@
+-- Покажите название и длительность в секундах самой короткой песни
+
+SELECT name,
+       min(Milliseconds * 0.001) AS second
+  FROM tracks;

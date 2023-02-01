@@ -1,0 +1,7 @@
+-- Покажите покупателей-амерканцев без факса ?
+
+SELECT firstname,
+       lastname
+  FROM customers
+ WHERE country = 'USA' AND 
+       fax IS NULL

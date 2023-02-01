@@ -1,0 +1,6 @@
+-- Покажите сотрудников  которые работают в кампании уже 18 лет и более ?
+
+SELECT LastName,
+       FirstName
+  FROM employees
+ WHERE strftime('%Y', date('now') ) - strftime('%Y', HireDate) >= 18;

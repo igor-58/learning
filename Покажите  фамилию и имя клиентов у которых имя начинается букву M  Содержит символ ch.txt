@@ -1,0 +1,6 @@
+-- Покажите  фамилию и имя клиентов у которых имя начинается букву M ? Содержит символ "ch"
+
+SELECT firstname,
+       lastname
+  FROM customers
+ WHERE firstname LIKE 'M%' and firstname like '%ch%'

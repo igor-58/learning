@@ -1,0 +1,10 @@
+-- Покажите  фамилию и имя сотрудников кампании нанятых в 2002 году из города Калгари ?
+
+SELECT lastname,
+       firstname,
+       hiredate,
+       city
+  FROM employees
+ WHERE hiredate >= ('2002-01-01') AND 
+       hiredate < ('2003-01-01') AND 
+       city = 'Calgary';

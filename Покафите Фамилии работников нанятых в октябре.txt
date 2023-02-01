@@ -1,0 +1,5 @@
+-- Покафите Фамилии работников нанятых в октябре?
+
+SELECT LastName
+  FROM employees
+ WHERE strftime('%m', HireDate) = '10';

@@ -1,0 +1,5 @@
+--Покажите  в алфавитном порядке все должности в кампании  ?
+
+SELECT DISTINCT title
+  FROM employees
+ ORDER BY title;

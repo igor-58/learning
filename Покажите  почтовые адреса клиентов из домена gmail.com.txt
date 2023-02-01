@@ -1,0 +1,5 @@
+-- Покажите  почтовые адреса клиентов из домена gmail.com ?
+
+SELECT Address
+  FROM customers
+ WHERE Email LIKE '%gmail.com';

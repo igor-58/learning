@@ -1,0 +1,6 @@
+-- Покажите  фамилию и имя клиентов из города Прага?
+
+SELECT lastname,
+       firstname
+  FROM customers
+ WHERE city = 'Prague';

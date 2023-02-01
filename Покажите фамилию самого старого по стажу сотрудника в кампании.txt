@@ -1,0 +1,8 @@
+-- Покажите фамилию самого старого по стажу сотрудника в кампании ? 
+
+SELECT LastName
+  FROM employees
+ WHERE strftime('%Y', DATE('now') ) - strftime('%Y', HireDate) = (
+                                                                     SELECT MAX(strftime('%Y', DATE('now') ) - strftime('%Y', HireDate) ) 
+                                                                       FROM employees
+                                                                 );

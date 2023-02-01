@@ -1,0 +1,4 @@
+-- Сколько секунд длится самая короткая песня ?
+
+SELECT min(Milliseconds * 0.001) AS second
+  FROM tracks;

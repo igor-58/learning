@@ -1,0 +1,6 @@
+-- Покажите  фамилию и имя сотрудников кампании нанятых в возрасте 40 лет и выше?
+
+SELECT lastname,
+       firstname
+  FROM employees
+ WHERE strftime('%Y', hiredate) - strftime('%Y', birthdate) >= 40;

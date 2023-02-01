@@ -1,0 +1,7 @@
+-- Покажите канадские города в которые сделаны продажи в августе и сентябре месяце? 
+
+SELECT ShipCity,
+       strftime('%m', SalesDate) AS date
+  FROM sales
+ WHERE ShipCountry = 'Canada' AND 
+       strftime('%m', SalesDate) IN ('08', '09')
